@@ -7,7 +7,9 @@ import {
   Section,
   SectionContent,
   useTheme,
+  themeColor,
 } from "react-native-rapi-ui";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 export default function ({ navigation }) {
   const { isDarkmode, setTheme } = useTheme();
@@ -24,25 +26,43 @@ export default function ({ navigation }) {
         <Section>
           <SectionContent>
             <Text fontWeight="bold" style={{ textAlign: "center" }}>
-              These UI components provided by Rapi UI
+              Rangkuman Bulan ini
+            </Text>
+            <Text style={{ textAlign: "center", color: "green" }}>
+              Pemasukan
+            </Text>
+            <Text style={{ textAlign: "center", color: "red" }}>
+              Pengeluaran
             </Text>
             <Button
               style={{ marginTop: 10 }}
-              text="Rapi UI Documentation"
+              text="Tambah Pemasukan"
               status="info"
-              onPress={() => Linking.openURL("https://rapi-ui.kikiding.space/")}
+              onPress={() => {
+                navigation.navigate("PemasukanScreen");
+              }}
             />
             <Button
-              text="Go to second screen"
+              text="Tambah Pengeluaran"
               onPress={() => {
-                navigation.navigate("SecondScreen");
+                navigation.navigate("PengeluaranScreen");
+              }}
+              style={{
+                marginTop: 10,
+              }}
+            />
+            <Button
+              text="Detail Cash Flow"
+              status="info"
+              onPress={() => {
+                navigation.navigate("PengeluaranScreen");
               }}
               style={{
                 marginTop: 10,
               }}
             />
 
-            <Button
+            {/* <Button
               text={isDarkmode ? "Light Mode" : "Dark Mode"}
               status={isDarkmode ? "success" : "warning"}
               onPress={() => {
@@ -55,7 +75,7 @@ export default function ({ navigation }) {
               style={{
                 marginTop: 10,
               }}
-            />
+            /> */}
           </SectionContent>
         </Section>
       </View>

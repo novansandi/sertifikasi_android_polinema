@@ -8,7 +8,8 @@ import TabBarIcon from "../components/utils/TabBarIcon";
 import TabBarText from "../components/utils/TabBarText";
 
 import Home from "../screens/Home";
-import SecondScreen from "../screens/SecondScreen";
+import PemasukanScreen from "../screens/PemasukanScreen";
+import PengeluaranScreen from "../screens/PengeluaranScreen";
 import About from "../screens/About";
 import Profile from "../screens/Profile";
 
@@ -21,7 +22,8 @@ const Main = () => {
       }}
     >
       <MainStack.Screen name="MainTabs" component={MainTabs} />
-      <MainStack.Screen name="SecondScreen" component={SecondScreen} />
+      <MainStack.Screen name="PemasukanScreen" component={PemasukanScreen} />
+      <MainStack.Screen name="PengeluaranScreen" component={PengeluaranScreen} />
     </MainStack.Navigator>
   );
 };
