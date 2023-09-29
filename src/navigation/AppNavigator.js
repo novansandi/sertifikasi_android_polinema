@@ -7,11 +7,12 @@ import { themeColor, useTheme } from "react-native-rapi-ui";
 import TabBarIcon from "../components/utils/TabBarIcon";
 import TabBarText from "../components/utils/TabBarText";
 
+import Login from "../screens/Login";
 import Home from "../screens/Home";
-import PemasukanScreen from "../screens/PemasukanScreen";
-import PengeluaranScreen from "../screens/PengeluaranScreen";
-import About from "../screens/About";
-import Profile from "../screens/Profile";
+import SecondScreen from "../screens/SecondScreen";
+import Pengeluaran from "../screens/Pengeluaran";
+import Pemasukan from "../screens/Pemasukan";
+import Detail from "../screens/Detail";
 
 const MainStack = createNativeStackNavigator();
 const Main = () => {
@@ -22,8 +23,8 @@ const Main = () => {
       }}
     >
       <MainStack.Screen name="MainTabs" component={MainTabs} />
-      <MainStack.Screen name="PemasukanScreen" component={PemasukanScreen} />
-      <MainStack.Screen name="PengeluaranScreen" component={PengeluaranScreen} />
+      <MainStack.Screen name="SecondScreen" component={SecondScreen} />
+      <MainStack.Screen name="loginPage" component={Login} />
     </MainStack.Navigator>
   );
 };
@@ -55,26 +56,38 @@ const MainTabs = () => {
         }}
       />
       <Tabs.Screen
-        name="Profile"
-        component={Profile}
+        name="Pemasukan"
+        component={Pemasukan}
         options={{
           tabBarLabel: ({ focused }) => (
-            <TabBarText focused={focused} title="Profile" />
+            <TabBarText focused={focused} title="Pemasukan" />
           ),
           tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} icon={"person"} />
+            <TabBarIcon focused={focused} icon={"arrow-forward"} />
           ),
         }}
       />
       <Tabs.Screen
-        name="About"
-        component={About}
+        name="Pengeluaran"
+        component={Pengeluaran}
         options={{
           tabBarLabel: ({ focused }) => (
-            <TabBarText focused={focused} title="About" />
+            <TabBarText focused={focused} title="Pengeluaran" />
           ),
           tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} icon={"ios-information-circle"} />
+            <TabBarIcon focused={focused} icon={"arrow-back"} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="Detail"
+        component={Detail}
+        options={{
+          tabBarLabel: ({ focused }) => (
+            <TabBarText focused={focused} title="Detail Cash Flow" />
+          ),
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} icon={"bar-chart"} />
           ),
         }}
       />
